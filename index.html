@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <title>Task Buddy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Kaushan Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        body, html {
+            height: 100%;
+            position: relative;
+            overflow: hidden; 
+        }
+        
+        .full-screen-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .dynamic-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            color: white;
+            text-align: center;
+            z-index: 1;
+            opacity: 0; 
+            transition: opacity 1s; 
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+        }
+
+        h1 {
+            font-size: 70px;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+            z-index: 1;
+            position: relative;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 80%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        button {
+            margin-top: 20px; 
+            padding: 10px 20px;
+            font-size: 1.7em;
+            color: white;
+            background: linear-gradient(0deg, #ff00bb 0%, #ebef06 100%);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; 
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .box {
+            box-shadow: 5px 3px 10px 1px #000000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="full-screen-video" preload="auto">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="box">
+        <h1>🤩Task Buddy🤩</h1>
+    </div>
+    <div class="dynamic-text" id="dynamicText"></div> 
+    <div class="button-container">
+        <button onclick="window.location.href='page.html';">👉Start👈</button>
+    </div>
+    <script>
+        setTimeout(() => {
+            const text = "Hello, my name is Zara!😇 I’m excited to be your buddy🥰 and assist you in completing your tasks.";
+            const dynamicText = document.getElementById('dynamicText');
+            dynamicText.style.opacity = 1;
+            
+            let index = 0;
+
+            function printCharacter() {
+                if (index < text.length) {
+                    dynamicText.innerHTML += text[index];
+                    index++;
+                    setTimeout(printCharacter, 100); 
+                }
+            }
+
+            printCharacter(); 
+        }, 1000); 
+    </script>
+</body>
+</html>

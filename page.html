@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <img class="background-img" src="img1.png" alt="asa">
+    <header>
+
+    </header>
+    <div class="container">
+        <h1>✨Task Buddy✨</h1>
+        <div class="task-form">
+            <div>
+            <label>Tasktitle👉:</label>
+            <input type="text" id="taskTitle" placeholder="Task Title" required>
+            </div>
+            <div>
+            <label>Task Description👉:</label>
+            <input type="text" id="taskDescription" placeholder="Task Description">
+            </div>
+            <div>
+            <label>Task Deadline👉:</label>
+            <input type="date" id="taskDeadline" required>
+            </div>
+            <div class="box">
+                <label for="task-priority">Select priority👉:</label>
+                <div class="task-priority">
+                    <button class="priority-button1" data-priority="low">Low</button>
+                    <button class="priority-button2" data-priority="medium">Medium</button>
+                    <button class="priority-button3" data-priority="high">High</button>
+                </div>       
+            </div>
+            <div>
+            <label>Task Category👉:</label>    
+            <input type="text" id="taskCategory" placeholder="Category (e.g., Work, Personal)" required>
+            </div> 
+            <button id="addTaskButton">Add Task</button>
+        </div>
+        <h2>Tasks</h2>
+        <ul id="taskList"></ul>
+        <h2>Completed Tasks</h2>
+        <ul id="completedTasksList"></ul>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+body {
+    font-family: "Oleo Script", system-ui;
+    font-weight: 700;
+    font-style: normal;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+.background-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; 
+    transform: translate(-50%, -50%);
+    object-fit: cover; 
+}
+.box{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    font-size: 20px;
+}
+.container{
+    max-width: 600px;
+    font-size: 25px;
+    background: radial-gradient(#faf9fa 0%, #8bddf9 100%);
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(-65px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(-28px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(-8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+}
+h1, h2 {
+    text-align: center;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width:350px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #0a6ff3;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #05cee9;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+li button {
+    background: #dc3545;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+li button:hover {
+    background: #c82333;
+}
+
+.low {
+    background-color: #d4edda;
+}
+
+.medium {
+    background-color: #fff3cd;
+}
+
+.high {
+    background-color: #f8d7da;
+}
+.priority-button1{
+    background-color: #e9db1a;
+}
+.priority-button2{
+    background-color: #53e745;
+}
+.priority-button3{
+    background-color: #f88f98;
+}
+.task-priority {
+    display: flex;
+    gap: 10px; 
+}
+
+.priority-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; 
+}
+
+.priority-button:hover {
+    background-color: #d0d0d0;
+    transform: scale(1.05); 
+}
+
+.priority-button.active {
+    background-color: #007bff; 
+    color: white;
+}
+
